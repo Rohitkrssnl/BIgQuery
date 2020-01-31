@@ -1,0 +1,119 @@
+
+Q1) Impose Left Join on the data and interpret the data.
+
+select
+hire.duration,
+station.name
+from `bigquery-public-data.london_bicycles.cycle_hire` hire
+LEFT JOIN `bigquery-public-data.london_bicycles.cycle_stations` station
+on ( hire.end_station_id = station.id)
+limit 30
+
+duration	name
+3180	"Park Lane , Hyde Park"
+7380	
+2040	"Orsett Terrace, Bayswater"
+2280	"Regent's Row , Haggerston"
+2340	"Albert Embankment, Vauxhall"
+2160	"Pitfield Street North,Hoxton"
+5400	"Binfield Road, Stockwell"
+1980	
+2400	"Claverton Street, Pimlico"
+3000	"Aquatic Centre, Queen Elizabeth Olympic Park"
+6540	
+1980	"Denyer Street, Knightsbridge"
+2580	"Whitehall Place, Strand"
+6060	"East Village, Queen Elizabeth Olympic Park"
+3480	"Belvedere Road 1, South Bank"
+2280	"Serpentine Car Park, Hyde Park"
+2040	"Blenheim Crescent, Ladbroke Grove"
+5760	"Goldsmith's Row, Haggerston"
+18060	"Tower Gardens , Tower"
+2220	"St. John's Road, Clapham Junction"
+4800	"Fournier Street, Whitechapel"
+2940	"Warwick Row, Westminster"
+2160	"Breams Buildings, Holborn"
+6540	"New Kent Road, The Borough"
+2820	"Ilchester Gardens, Bayswater"
+3480	"St. John's Wood Church, The Regent's Park"
+2460	"Moor Street, Soho"
+2040	"Waterloo Place, St. James's"
+4800	"William IV Street, Strand"
+1720380	"Hereford Road, Bayswater"
+
+Q2) What is the maximum date in the employment hours earning data?
+
+SELECT MAX(date)
+FROM `bigquery-public-data.bls.employment_hours_earnings` 
+
+Ans_
+2019-12-31
+
+Q3) What is the minimum footnote code in the data?
+
+SELECT MIN(footnote_codes)
+FROM `bigquery-public-data.bls.employment_hours_earnings` 
+
+Ans_
+P
+
+Q4) What is the minimum date in the employment hours earning data?
+
+SELECT MIN(date)
+FROM `bigquery-public-data.bls.employment_hours_earnings` 
+
+Ans_
+1939-01-01
+
+Q5) Which is the least year in the data?
+
+SELECT MIN(year)
+FROM `bigquery-public-data.bls.employment_hours_earnings` 
+LIMIT 10
+
+Ans_
+1939
+
+Q6) What is the maximum period in the employment hours earning data?
+
+SELECT MAX(period)
+FROM `bigquery-public-data.bls.employment_hours_earnings` 
+
+Ans_
+M13
+
+Q7) Show the minimum series title in the data.
+
+SELECT MIN(series_title)
+FROM `bigquery-public-data.bls.employment_hours_earnings` 
+
+Ans_
+"Aggregate weekly hours of all employees, thousands, accommodation and food services, not seasonally adjusted"
+
+Q8) What is the minimum value in the employment  hours earning data?
+
+SELECT MIN(value)
+FROM `bigquery-public-data.bls.employment_hours_earnings` 
+LIMIT 10
+
+Ans_
+-881.0
+
+Q9) Show the number of count of value in the data.
+
+SELECT COUNT(value)
+FROM `bigquery-public-data.bls.employment_hours_earnings` 
+LIMIT 10
+
+Ans_
+7773848
+
+Q10) What is the average value of the data?
+
+SELECT AVG(value)
+FROM `bigquery-public-data.bls.employment_hours_earnings` 
+LIMIT 10
+
+Ans_
+64340.93867150529
+
